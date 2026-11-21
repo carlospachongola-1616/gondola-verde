@@ -121,4 +121,4 @@ La IA ayudó a generar el código, pero se revisó y se ajustó con criterio pro
 
 ## Video explicativo
 
-📹 [Ver el video en YouTube](ENLACE_DEL_VIDEO)
+📹 [Ver el video en YouTube]( (https://youtu.be/ZMC8qodZrKU))
