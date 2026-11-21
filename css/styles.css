@@ -1,0 +1,143 @@
+/* ===== Variables de color (paleta verde vegana) ===== */
+:root {
+  --verde: #2f7d32;
+  --verde-oscuro: #1b5e20;
+  --verde-claro: #e8f5e9;
+  --crema: #fbfaf5;
+  --texto: #263238;
+  --gris: #78909c;
+  --rojo: #c62828;
+  --naranja: #ef6c00;
+  --sombra: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--crema);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+  background: linear-gradient(135deg, var(--verde), var(--verde-oscuro));
+  color: white;
+  padding: 24px 32px;
+}
+.logo { font-size: 1.8rem; font-weight: 700; }
+.subtitulo { opacity: 0.9; margin-top: 4px; }
+
+/* ===== Distribución general ===== */
+.contenedor {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  padding: 24px 32px;
+  align-items: start;
+}
+
+.tarjeta {
+  background: white;
+  border-radius: 14px;
+  box-shadow: var(--sombra);
+  padding: 22px;
+}
+.tarjeta h2 { color: var(--verde-oscuro); margin-bottom: 16px; font-size: 1.25rem; }
+
+/* ===== Formulario ===== */
+.grupo { display: flex; flex-direction: column; margin-bottom: 12px; flex: 1; min-width: 0; }
+.fila { display: flex; gap: 12px; }
+label { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+
+input, select {
+  padding: 9px 11px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  width: 100%;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgba(47, 125, 50, 0.15);
+}
+
+.check { display: flex; align-items: center; gap: 8px; font-weight: 500; margin: 6px 0 12px; }
+.error { color: var(--rojo); font-size: 0.88rem; min-height: 1.2em; margin-bottom: 8px; }
+
+/* ===== Botones ===== */
+.botones { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+.btn:hover { opacity: 0.9; }
+.btn:active { transform: scale(0.97); }
+.btn-primario { background: var(--verde); color: white; }
+.btn-secundario { background: #eceff1; color: var(--texto); }
+.btn-editar { background: #fff3e0; color: var(--naranja); padding: 6px 10px; }
+.btn-eliminar { background: #ffebee; color: var(--rojo); padding: 6px 10px; }
+
+/* ===== Lista ===== */
+.cabecera-lista { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.cabecera-lista h2 { margin-bottom: 0; }
+.contador { background: var(--verde-claro); color: var(--verde-oscuro); border-radius: 20px; padding: 2px 10px; font-size: 0.9rem; }
+.filtros { display: flex; gap: 10px; flex-wrap: wrap; }
+.filtros input { min-width: 220px; width: auto; }
+.filtros select { width: auto; }
+.check input { width: auto; }
+
+.tabla-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th { text-align: left; background: var(--verde-claro); color: var(--verde-oscuro); padding: 10px; }
+td { padding: 10px; border-bottom: 1px solid #eceff1; vertical-align: middle; }
+tr:hover td { background: #fafafa; }
+td .marca { display: block; color: var(--gris); font-size: 0.82rem; }
+.acciones { display: flex; gap: 6px; }
+td:last-child { white-space: nowrap; }
+
+/* Etiquetas de estado */
+.etiqueta { border-radius: 20px; padding: 2px 9px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.etiqueta.si { background: var(--verde-claro); color: var(--verde-oscuro); }
+.etiqueta.no { background: #eceff1; color: var(--gris); }
+.stock-bajo { color: var(--rojo); font-weight: 700; }
+.vencido { color: var(--rojo); font-weight: 600; }
+
+.vacio { text-align: center; color: var(--gris); padding: 24px; }
+.oculto { display: none; }
+
+/* ===== Aviso flotante ===== */
+.aviso {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--verde-oscuro);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+.aviso.visible { opacity: 1; transform: translateY(0); }
+.aviso.peligro { background: var(--rojo); }
+
+.pie { text-align: center; color: var(--gris); font-size: 0.85rem; padding: 18px; }
+
+/* ===== Responsive: en pantallas pequeñas todo va en una columna ===== */
+@media (max-width: 860px) {
+  .contenedor { grid-template-columns: 1fr; padding: 16px; }
+}
