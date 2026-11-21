@@ -47,7 +47,7 @@ gondola-verde/
 
 1. Clona o descarga el repositorio:
    ```bash
-   git clone https://github.com/USUARIO/gondola-verde.git
+   git clone https://github.com/carlospachongola-1616/gondola-verde.git
    ```
 2. Abre la carpeta en **Visual Studio Code**.
 3. Haz clic derecho sobre `index.html` y elige **Open with Live Server** (o abre `index.html` con doble clic en el navegador).
@@ -115,9 +115,9 @@ La IA ayudó a generar el código, pero se revisó y se ajustó con criterio pro
 - Se usaron marcas y productos de ejemplo cercanos al contexto local (por ejemplo, *Huila Snacks*).
 - Se revisó cada función para poder explicarla con palabras propias en el video.
 
-## Autora
+## Autor
 
-**Zarhy Liceth Peña** – Fundación Escuela Tecnológica de Neiva (FET)
+**Carlos Andrés Pachongo Lasso** – Fundación Escuela Tecnológica de Neiva (FET)
 
 ## Video explicativo
 
